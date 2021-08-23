@@ -1,5 +1,9 @@
-var ball;
-var  pyramid1 = [];
+const World = Matter.World;
+const Engine = Matter.Engine;
+const Bodies = Matter.Bodies;
+const Constraint = Matter.Constraint;
+
+
 
 function setup() {
   createCanvas(800,400);
