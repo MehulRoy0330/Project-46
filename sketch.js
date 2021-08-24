@@ -11,7 +11,9 @@ var placeholder1, placeholder2;
 
 var pyramid1 = [], pyramid2 = [];
 
-var block;
+var ball;
+
+var sling1, sling2;
 
 function setup() {
     createCanvas(windowWidth, windowHeight);
@@ -26,8 +28,6 @@ function setup() {
 
     placeholder1 = new Ground(width/2+50, height/2+100, 250, 10);
     placeholder2 = new Ground(width/2+350, height/2, 200, 10);
-
-    //block = new Block(width/2+290, height/2-5);
 
     var x = width/2-30;
     var y = height/2+80;
@@ -55,6 +55,10 @@ function setup() {
         newX += 20;
     }
 
+    ball = new Ball(width/2+200, height-70);
+
+    sling1 = new Slingshot(ball.body, {x: 145, y: height/2+125});
+    sling2 = new Slingshot(ball.body, {x:width/2-340, y: height-95});
 }
 
 function draw() {
@@ -68,9 +72,6 @@ function draw() {
 
     placeholder1.display();
     placeholder2.display();
-
-    //block.display();
-
     
     for(var i = 0; i < pyramid1.length; i++){
         pyramid1[i].display();
@@ -78,4 +79,9 @@ function draw() {
     for(var i = 0; i < pyramid2.length; i++){
         pyramid2[i].display();
     }
+
+    ball.display();
+
+    sling1.display();
+    sling2.display();
 }
