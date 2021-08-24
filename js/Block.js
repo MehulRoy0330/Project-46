@@ -2,8 +2,8 @@ class Block{
     constructor(x, y){
         var options = {
             restitution: 0.15,
-            friction: 0.7,
-            density: 6.0
+            friction: 0.4,
+            density: 0.50
         }
         this.side = 40;
         this.body = Bodies.rectangle(x, y, this.side, this.side, options);
