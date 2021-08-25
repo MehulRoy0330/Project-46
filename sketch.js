@@ -46,7 +46,7 @@ function setup() {
         newX += 20;
     }
 
-    x = width/2+290;
+    x = width/2+305;
     y = height/2-5;
     newX = x;
     for(var i = 3; i >= 1; i--){
@@ -67,6 +67,8 @@ function setup() {
 
 function draw() {
     background("#fff200");
+
+    text("Shoot the ball to demolish the pyramids!!", width/2-60, height/2+200);
 
     noStroke();
     fill("black");
