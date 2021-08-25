@@ -15,7 +15,6 @@ var ball;
 
 var sling1, sling2;
 
-var turns = 2;
 var gameState = "pre-launch";
 
 var score = 0;
@@ -68,6 +67,12 @@ function setup() {
 
 function draw() {
     background("#fff200");
+
+    noStroke();
+    fill("black");
+    textSize(18);
+    text("Score: "+score, width-150, 100);
+
     Engine.update(engine);
 
     ground.display();
@@ -80,9 +85,11 @@ function draw() {
 
     for(var i = 0; i < pyramid1.length; i++){
         pyramid1[i].display();
+        pyramid1[i].score();
     }
     for(var i = 0; i < pyramid2.length; i++){
         pyramid2[i].display();
+        pyramid2[i].score();
     }
 
     ball.display();

@@ -34,4 +34,9 @@ class Block{
             pop();
         }
     }
+    score(){
+        if(this.Visiblity < 0  && this.Visiblity > -251.25){
+            score++;
+        }
+    }
 }
