@@ -10,12 +10,28 @@ class Block{
         this.x = x;
         this.y = y;
         World.add(world, this.body);
+        this.image = loadImage("block.png")
+        this.Visiblity = 255;
     }
     display(){
         var pos = this.body.position;
-        rectMode(CENTER);
-        noStroke();
-        fill("#00A2E8");
-        rect(pos.x, pos.y, this.side, this.side);
+        if(this.body.speed < 5){
+            push();
+            translate(pos.x, pos.y);
+
+            imageMode(CENTER)
+            image(this.image, 0, 0, this.side, this.side);
+            pop();
+        }
+        else{
+            World.remove(world, this.body);
+            push();
+            this.Visiblity -= 5;
+            tint(255, this.Visiblity);
+
+            imageMode(CENTER)
+            image(this.image, pos.x, pos.y, this.side, this.side);
+            pop();
+        }
     }
 }
